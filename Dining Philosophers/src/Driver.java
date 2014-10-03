@@ -42,8 +42,12 @@ public class Driver {
 			
 				//switch statement to handle setting each variable
 				//since it is given that each argument is given in the same order
+				//*NOTE* setting the value for np is also a part of the switch statement
+				//    for in the event that "-l" is the first parameter
 				
 				switch (count) {
+					case 0: np = Integer.parseInt(args[i]);
+							break;
 					case 1: nt = Integer.parseInt(args[i]);
 							break;
 					case 2: tm = Integer.parseInt(args[i]);
