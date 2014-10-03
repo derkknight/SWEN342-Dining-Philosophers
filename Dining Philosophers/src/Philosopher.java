@@ -35,8 +35,14 @@ public class Philosopher extends Thread{
 	public void run() {
 		Random randomizer = new Random();
 		long waitTime = 0; // variable for sleep length created through Random object
+		int count = 0;
+		boolean eatForever = false;
 		
-		for(int i = 0; i < nTimes; i++) {
+		if (nTimes == 0) {
+			eatForever = true;
+		}
+		
+		while(count < nTimes || eatForever) {
 			
 			//think about eating
 			
@@ -83,10 +89,12 @@ public class Philosopher extends Thread{
 			
 			//release both forks once completed eating
 			
-			right.release();
 			System.out.println("Philosopher " + id + " releases right fork.");
-			left.release();
+			right.release();
 			System.out.println("Philosopher " + id + " releases left fork.");
+			left.release();
+			
+			count++;  //increment the counter
 		}
 	}
 }

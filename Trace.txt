@@ -1,0 +1,383 @@
+TRACE 1: java Driver -l 2 5 0 0
+
+OUTPUT:
+
+Philosopher 0 thinks for 0 time units
+Philosopher 1 thinks for 0 time units
+Philosopher 0 goes for right fork.
+Philosopher 1 goes for left fork.
+Philosopher 0 has right fork.
+Philosopher 0 goes for left fork.
+Philosopher 0 has left fork.
+Philosopher 0 eats for 0 time unints
+Philosopher 1 has left fork.
+Philosopher 1 goes for right fork.
+Philosopher 0 releases right fork.
+Philosopher 0 releases left fork.
+Philosopher 0 thinks for 0 time units
+Philosopher 0 goes for right fork.
+Philosopher 1 has right fork.
+Philosopher 1 eats for 0 time unints
+Philosopher 1 releases right fork.
+Philosopher 1 releases left fork.
+Philosopher 1 thinks for 0 time units
+Philosopher 1 goes for left fork.
+Philosopher 0 has right fork.
+Philosopher 0 goes for left fork.
+Philosopher 0 has left fork.
+Philosopher 0 eats for 0 time unints
+Philosopher 0 releases right fork.
+Philosopher 0 releases left fork.
+Philosopher 0 thinks for 0 time units
+Philosopher 1 has left fork.
+Philosopher 1 goes for right fork.
+Philosopher 1 has right fork.
+Philosopher 1 eats for 0 time unints
+Philosopher 0 goes for right fork.
+Philosopher 1 releases right fork.
+Philosopher 1 releases left fork.
+Philosopher 1 thinks for 0 time units
+Philosopher 0 has right fork.
+Philosopher 1 goes for left fork.
+Philosopher 0 goes for left fork.
+Philosopher 0 has left fork.
+Philosopher 0 eats for 0 time unints
+Philosopher 0 releases right fork.
+Philosopher 1 has left fork.
+Philosopher 0 releases left fork.
+Philosopher 1 goes for right fork.
+Philosopher 0 thinks for 0 time units
+Philosopher 1 has right fork.
+Philosopher 0 goes for right fork.
+Philosopher 1 eats for 0 time unints
+Philosopher 1 releases right fork.
+Philosopher 1 releases left fork.
+Philosopher 0 has right fork.
+Philosopher 1 thinks for 0 time units
+Philosopher 0 goes for left fork.
+Philosopher 1 goes for left fork.
+Philosopher 0 has left fork.
+Philosopher 0 eats for 0 time unints
+Philosopher 0 releases right fork.
+Philosopher 1 has left fork.
+Philosopher 0 releases left fork.
+Philosopher 1 goes for right fork.
+Philosopher 0 thinks for 0 time units
+Philosopher 1 has right fork.
+Philosopher 0 goes for right fork.
+Philosopher 1 eats for 0 time unints
+Philosopher 1 releases right fork.
+Philosopher 1 releases left fork.
+Philosopher 0 has right fork.
+Philosopher 1 thinks for 0 time units
+Philosopher 0 goes for left fork.
+Philosopher 1 goes for left fork.
+Philosopher 0 has left fork.
+Philosopher 0 eats for 0 time unints
+Philosopher 0 releases right fork.
+Philosopher 1 has left fork.
+Philosopher 0 releases left fork.
+Philosopher 1 goes for right fork.
+Philosopher 1 has right fork.
+Philosopher 1 eats for 0 time unints
+Philosopher 1 releases right fork.
+Philosopher 1 releases left fork.
+--Program Terminates Normally--
+
+//The configuration of two philosophers with one right-handed and one left-handed philosopher will always run to
+//completion. Because there is one left-handed philosopher and one right-handed philosopher, both philosophers
+//will reach for the same fork first. Whichever philosopher doesn't grab the fork first must wait until the other
+//philosopher completes eating and releases both forks before attempting to eat again.
+
+--------------------------------------------------------------------------------------------------------------------
+TRACE 2: java Driver 2 0 0 0
+
+OUTPUT:
+
+Philosopher 0 thinks for 0 time units
+Philosopher 0 goes for right fork.
+Philosopher 0 has right fork.
+Philosopher 0 goes for left fork.
+Philosopher 1 thinks for 0 time units
+Philosopher 0 has left fork.
+Philosopher 1 goes for right fork.
+Philosopher 0 eats for 0 time unints
+Philosopher 0 releases right fork.
+Philosopher 0 releases left fork.
+Philosopher 0 thinks for 0 time units
+Philosopher 0 goes for right fork.
+Philosopher 1 has right fork.
+Philosopher 0 has right fork.
+Philosopher 1 goes for left fork.
+Philosopher 0 goes for left fork.
+--Program Deadlocks, Terminated Manually--
+
+//Unlike the scenario in Trace 1, with both philosophers being right-handed, both philosophers can grab a fork
+//at the same time. However, since there are only two forks, if both philosophers grab a fork, then neither
+//philosopher can begin eating since it is impossible to retrieve their other fork. Thus, deadlock.
+
+-------------------------------------------------------------------------------------------------------------------
+TRACE 3: java Driver -l 7 4 10 20
+
+OUTPUT:
+
+Philosopher 4 thinks for 8 time units
+Philosopher 2 thinks for 6 time units
+Philosopher 0 thinks for 9 time units
+Philosopher 1 thinks for 1 time units
+Philosopher 3 thinks for 9 time units
+Philosopher 6 thinks for 1 time units
+Philosopher 5 thinks for 8 time units
+Philosopher 6 goes for right fork.
+Philosopher 1 goes for left fork.
+Philosopher 6 has right fork.
+Philosopher 1 has left fork.
+Philosopher 6 goes for left fork.
+Philosopher 1 goes for right fork.
+Philosopher 6 has left fork.
+Philosopher 1 has right fork.
+Philosopher 6 eats for 0 time unints
+Philosopher 1 eats for 4 time unints
+Philosopher 6 releases right fork.
+Philosopher 6 releases left fork.
+Philosopher 6 thinks for 5 time units
+Philosopher 1 releases right fork.
+Philosopher 1 releases left fork.
+Philosopher 1 thinks for 9 time units
+Philosopher 6 goes for right fork.
+Philosopher 2 goes for right fork.
+Philosopher 6 has right fork.
+Philosopher 2 has right fork.
+Philosopher 6 goes for left fork.
+Philosopher 2 goes for left fork.
+Philosopher 6 has left fork.
+Philosopher 2 has left fork.
+Philosopher 6 eats for 18 time unints
+Philosopher 2 eats for 0 time unints
+Philosopher 2 releases right fork.
+Philosopher 2 releases left fork.
+Philosopher 2 thinks for 2 time units
+Philosopher 2 goes for right fork.
+Philosopher 4 goes for right fork.
+Philosopher 2 has right fork.
+Philosopher 4 has right fork.
+Philosopher 2 goes for left fork.
+Philosopher 4 goes for left fork.
+Philosopher 2 has left fork.
+Philosopher 4 has left fork.
+Philosopher 2 eats for 6 time unints
+Philosopher 4 eats for 2 time unints
+Philosopher 0 goes for right fork.
+Philosopher 5 goes for left fork.
+Philosopher 3 goes for left fork.
+Philosopher 4 releases right fork.
+Philosopher 4 releases left fork.
+Philosopher 3 has left fork.
+Philosopher 4 thinks for 1 time units
+Philosopher 3 goes for right fork.
+Philosopher 4 goes for right fork.
+Philosopher 2 releases right fork.
+Philosopher 2 releases left fork.
+Philosopher 2 thinks for 2 time units
+Philosopher 1 goes for left fork.
+Philosopher 1 has left fork.
+Philosopher 1 goes for right fork.
+Philosopher 1 has right fork.
+Philosopher 1 eats for 5 time unints
+Philosopher 3 has right fork.
+Philosopher 3 eats for 12 time unints
+Philosopher 2 goes for right fork.
+Philosopher 1 releases right fork.
+Philosopher 1 releases left fork.
+Philosopher 1 thinks for 7 time units
+Philosopher 2 has right fork.
+Philosopher 2 goes for left fork.
+Philosopher 6 releases right fork.
+Philosopher 5 has left fork.
+Philosopher 6 releases left fork.
+Philosopher 5 goes for right fork.
+Philosopher 0 has right fork.
+Philosopher 6 thinks for 0 time units
+Philosopher 0 goes for left fork.
+Philosopher 5 has right fork.
+Philosopher 0 has left fork.
+Philosopher 6 goes for right fork.
+Philosopher 0 eats for 19 time unints
+Philosopher 5 eats for 1 time unints
+Philosopher 5 releases right fork.
+Philosopher 5 releases left fork.
+Philosopher 5 thinks for 2 time units
+Philosopher 6 has right fork.
+Philosopher 6 goes for left fork.
+Philosopher 3 releases right fork.
+Philosopher 1 goes for left fork.
+Philosopher 2 has left fork.
+Philosopher 3 releases left fork.
+Philosopher 2 eats for 4 time unints
+Philosopher 3 thinks for 6 time units
+Philosopher 4 has right fork.
+Philosopher 4 goes for left fork.
+Philosopher 4 has left fork.
+Philosopher 4 eats for 16 time unints
+Philosopher 5 goes for left fork.
+Philosopher 2 releases right fork.
+Philosopher 2 releases left fork.
+Philosopher 2 thinks for 1 time units
+Philosopher 1 has left fork.
+Philosopher 1 goes for right fork.
+Philosopher 2 goes for right fork.
+Philosopher 3 goes for left fork.
+Philosopher 4 releases right fork.
+Philosopher 4 releases left fork.
+Philosopher 3 has left fork.
+Philosopher 4 thinks for 3 time units
+Philosopher 3 goes for right fork.
+Philosopher 3 has right fork.
+Philosopher 3 eats for 5 time unints
+Philosopher 0 releases right fork.
+Philosopher 0 releases left fork.
+Philosopher 6 has left fork.
+Philosopher 1 has right fork.
+Philosopher 0 thinks for 9 time units
+Philosopher 1 eats for 15 time unints
+Philosopher 6 eats for 1 time unints
+Philosopher 6 releases right fork.
+Philosopher 6 releases left fork.
+Philosopher 6 thinks for 0 time units
+Philosopher 6 goes for right fork.
+Philosopher 5 has left fork.
+Philosopher 5 goes for right fork.
+Philosopher 5 has right fork.
+Philosopher 5 eats for 12 time unints
+Philosopher 4 goes for right fork.
+Philosopher 3 releases right fork.
+Philosopher 3 releases left fork.
+Philosopher 3 thinks for 6 time units
+Philosopher 4 has right fork.
+Philosopher 4 goes for left fork.
+Philosopher 0 goes for right fork.
+Philosopher 0 has right fork.
+Philosopher 0 goes for left fork.
+Philosopher 3 goes for left fork.
+Philosopher 5 releases right fork.
+Philosopher 5 releases left fork.
+Philosopher 4 has left fork.
+Philosopher 6 has right fork.
+Philosopher 6 goes for left fork.
+Philosopher 5 thinks for 9 time units
+Philosopher 4 eats for 16 time unints
+Philosopher 1 releases right fork.
+Philosopher 1 releases left fork.
+Philosopher 0 has left fork.
+Philosopher 2 has right fork.
+Philosopher 2 goes for left fork.
+Philosopher 2 has left fork.
+Philosopher 2 eats for 3 time unints
+Philosopher 1 thinks for 7 time units
+Philosopher 0 eats for 16 time unints
+Philosopher 2 releases right fork.
+Philosopher 2 releases left fork.
+Philosopher 5 goes for left fork.
+Philosopher 1 goes for left fork.
+Philosopher 1 has left fork.
+Philosopher 1 goes for right fork.
+Philosopher 4 releases right fork.
+Philosopher 4 releases left fork.
+Philosopher 3 has left fork.
+Philosopher 3 goes for right fork.
+Philosopher 3 has right fork.
+Philosopher 3 eats for 6 time unints
+Philosopher 4 thinks for 9 time units
+Philosopher 0 releases right fork.
+Philosopher 0 releases left fork.
+Philosopher 6 has left fork.
+Philosopher 6 eats for 8 time unints
+Philosopher 1 has right fork.
+Philosopher 1 eats for 1 time unints
+Philosopher 0 thinks for 6 time units
+Philosopher 1 releases right fork.
+Philosopher 1 releases left fork.
+Philosopher 3 releases right fork.
+Philosopher 3 releases left fork.
+Philosopher 3 thinks for 7 time units
+Philosopher 0 goes for right fork.
+Philosopher 4 goes for right fork.
+Philosopher 4 has right fork.
+Philosopher 4 goes for left fork.
+Philosopher 4 has left fork.
+Philosopher 4 eats for 7 time unints
+Philosopher 6 releases right fork.
+Philosopher 6 releases left fork.
+Philosopher 5 has left fork.
+Philosopher 5 goes for right fork.
+Philosopher 0 has right fork.
+Philosopher 0 goes for left fork.
+Philosopher 0 has left fork.
+Philosopher 0 eats for 7 time unints
+Philosopher 3 goes for left fork.
+Philosopher 4 releases right fork.
+Philosopher 4 releases left fork.
+Philosopher 3 has left fork.
+Philosopher 3 goes for right fork.
+Philosopher 3 has right fork.
+Philosopher 3 eats for 4 time unints
+Philosopher 5 has right fork.
+Philosopher 5 eats for 2 time unints
+Philosopher 0 releases right fork.
+Philosopher 0 releases left fork.
+Philosopher 0 thinks for 5 time units
+Philosopher 5 releases right fork.
+Philosopher 5 releases left fork.
+Philosopher 5 thinks for 3 time units
+Philosopher 3 releases right fork.
+Philosopher 3 releases left fork.
+Philosopher 5 goes for left fork.
+Philosopher 5 has left fork.
+Philosopher 5 goes for right fork.
+Philosopher 5 has right fork.
+Philosopher 5 eats for 2 time unints
+Philosopher 0 goes for right fork.
+Philosopher 0 has right fork.
+Philosopher 0 goes for left fork.
+Philosopher 0 has left fork.
+Philosopher 0 eats for 10 time unints
+Philosopher 5 releases right fork.
+Philosopher 5 releases left fork.
+Philosopher 0 releases right fork.
+Philosopher 0 releases left fork.
+--Program Terminates Normally--
+
+--------------------------------------------------------------------------------------------------
+TRACE 4: java Driver 3 5 5 5
+
+OUTPUT:
+
+Philosopher 2 thinks for 0 time units
+Philosopher 0 thinks for 1 time units
+Philosopher 1 thinks for 2 time units
+Philosopher 2 goes for right fork.
+Philosopher 2 has right fork.
+Philosopher 2 goes for left fork.
+Philosopher 2 has left fork.
+Philosopher 2 eats for 1 time unints
+Philosopher 2 releases right fork.
+Philosopher 0 goes for right fork.
+Philosopher 2 releases left fork.
+Philosopher 2 thinks for 1 time units
+Philosopher 0 has right fork.
+Philosopher 0 goes for left fork.
+Philosopher 0 has left fork.
+Philosopher 0 eats for 1 time unints
+Philosopher 0 releases right fork.
+Philosopher 1 goes for right fork.
+Philosopher 2 goes for right fork.
+Philosopher 0 releases left fork.
+Philosopher 2 has right fork.
+Philosopher 0 thinks for 0 time units
+Philosopher 0 goes for right fork.
+Philosopher 2 goes for left fork. //Philosopher 2 locked out
+Philosopher 1 has right fork.
+Philosopher 0 has right fork.
+Philosopher 1 goes for left fork. //Philosopher 1 locked out
+Philosopher 0 goes for left fork. //Philosopher 0 locked out
+--Program Deadlocks, Terminated Manually--
