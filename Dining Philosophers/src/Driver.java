@@ -4,52 +4,84 @@ import java.util.ArrayList;
 public class Driver {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		boolean rhanded = true;
-		if (args.length <= 4)
-		{
-			long np;
-			int nt;
-			long tm;
-			long em;
+
+		boolean hasLHanded = false;
+		long np = 4;
+		int nt = 10;
+		long tm = 0;
+		long em = 0;
+		int count = 0;
+	
+		//parse all command line arguments, if any were provided
+		// *NOTE* parser only assumes that correct arguments are given. does not handle otherwise 
+		
+		if (args.length > 0) {
 			
-			for (int i = 0; i < args.length; i++)
-			{
-				if (Integer.parseInt(args[i]) < 0)
-				{
-					System.out.println("No negative numbers!");
-					System.exit(0);
+			//check the first parameter. if args[0] is "-l" then set flag for left-handed philosophers.
+			// otherwise, parse first integer value and set np to it
+			
+			if (args[0].equals("-l")) {
+				hasLHanded = true;
+			} else {
+				if (Integer.parseInt(args[0]) >= 0) {
+					np = Integer.parseInt(args[0]);
+					count++;
+				} else {
+					System.err.println("No negative numbers");
+					System.exit(1);
 				}
 			}
-			if (args.length == 3)
-			{
-				np = 4;
-				nt = Integer.parseInt(args[0]);
-				tm = Long.parseLong(args[1]);
-				em = Long.parseLong(args[2]);
-			}
-			else
-			{
-				np = Long.parseLong(args[0]);
-				nt = Integer.parseInt(args[1]);
-				tm = Long.parseLong(args[2]);
-				em = Long.parseLong(args[3]);
-			}
+		
+			//parse the rest of the command arguments, if any exist
 			
-			ArrayList<Fork> forks = new ArrayList<Fork>();
-			ArrayList<Philosopher> phils = new ArrayList<Philosopher>();
-			for (int i = 0; i < np ; i++)
-			{
-				forks.add(new Fork());
+			for(int i = 1; i < args.length; i++) {
+				if (Integer.parseInt(args[i]) < 0) {
+					System.err.println("No negative numbers");
+					System.exit(1);
+				}
+			
+				//switch statement to handle setting each variable
+				//since it is given that each argument is given in the same order
+				
+				switch (count) {
+					case 1: nt = Integer.parseInt(args[i]);
+							break;
+					case 2: tm = Integer.parseInt(args[i]);
+							break;
+					case 3: em = Integer.parseInt(args[i]);
+				}
+				count++;
 			}
-			for (int i = 0; i < np - 1; i++)
-			{
-				int np_int = (int)np;
-				(new Philosopher(i, forks.get(i), forks.get((np_int+i-1)%np_int), rhanded, nt, tm, em)).start();
-			}
-
 		}
 		
+		ArrayList<Fork> forks = new ArrayList<Fork>();
+		
+		//fill the Fork ArrayList with Forks
+		
+		for (int i = 0; i < np ; i++)
+		{
+			forks.add(new Fork());
+		}
+		
+		// create and start each of the np philosophers
+		
+		for (int i = 0; i < np; i++)
+		{
+			int np_int = (int)np;
+			
+			//if there are left handed philosophers and if creating an odd-numbered philosopher, make them left handed
+			
+			if (hasLHanded) {
+				if ((i % 2) != 0) {
+					(new Philosopher(i, forks.get(i), forks.get((np_int+i-1)%np_int), false, nt, tm, em)).start();
+					continue;
+				}
+			}
+			
+			// create right handed-philosophers
+			
+			(new Philosopher(i, forks.get(i), forks.get((np_int+i-1)%np_int), true, nt, tm, em)).start();
+		}
 	}
 
 }

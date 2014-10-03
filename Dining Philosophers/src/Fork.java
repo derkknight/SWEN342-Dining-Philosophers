@@ -21,9 +21,9 @@ public class Fork implements IFork {
 	}
 
 
-	public void release() {
+	public synchronized void release() {
 		this.available = true;
-		notifyAll();	
+		notifyAll();
 	}
 	
 	
